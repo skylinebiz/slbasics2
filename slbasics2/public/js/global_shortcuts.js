@@ -19,7 +19,9 @@ frappe.slbasics.open_uom_calculator = function () {
 	function save_uoms(source_uom, target_uom) {
 		try {
 			localStorage.setItem(LS_KEY, JSON.stringify({ source_uom, target_uom }));
-		} catch (e) { /* ignore */ }
+		} catch (e) {
+			/* ignore */
+		}
 	}
 
 	const saved = load_saved_uoms();
@@ -148,7 +150,9 @@ frappe.slbasics.open_uom_calculator = function () {
 	}
 
 	function set_info_loading() {
-		set_info(`<span class="text-muted"><i class="fa fa-spinner fa-spin"></i> Fetching conversion factor…</span>`);
+		set_info(
+			`<span class="text-muted"><i class="fa fa-spinner fa-spin"></i> Fetching conversion factor…</span>`
+		);
 	}
 
 	function set_info_factor(source_uom, target_uom, factor) {
