@@ -6,8 +6,8 @@ if (erpnext.utils.BarcodeScanner && !erpnext.utils.BarcodeScanner.__cleanup_over
 	erpnext.utils.BarcodeScanner.__cleanup_override = true;
 
 	erpnext.utils.BarcodeScanner.prototype.clean_up = function () {
-		if (cur_frm && this.items_table_name) {
-			cur_frm.refresh_field(this.items_table_name);
+		if (this.frm && this.items_table_name) {
+			this.frm.refresh_field(this.items_table_name);
 		}
 	};
 }
