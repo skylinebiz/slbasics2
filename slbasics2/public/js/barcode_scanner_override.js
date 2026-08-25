@@ -1,4 +1,4 @@
-/* global erpnext, cur_frm */
+/* global erpnext */
 
 frappe.provide("erpnext.utils");
 
