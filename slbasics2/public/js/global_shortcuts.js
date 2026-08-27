@@ -1,8 +1,8 @@
 // ── SLBasics namespace ─────────────────────────────────────────────────────────
-frappe.slbasics = frappe.slbasics || {};
+frappe.slbasics2 = frappe.slbasics2 || {};
 
 // ── UOM Calculator Dialog ──────────────────────────────────────────────────────
-frappe.slbasics.open_uom_calculator = function () {
+frappe.slbasics2.open_uom_calculator = function () {
 	let conversion_cache = {};
 	let current_factor = null;
 
@@ -283,7 +283,7 @@ frappe.ui.keys.add_shortcut({
 	shortcut: "alt+c",
 	action: function (e) {
 		e.preventDefault();
-		frappe.slbasics.open_uom_calculator();
+		frappe.slbasics2.open_uom_calculator();
 	},
 	description: "Open UOM Calculator",
 	ignore_inputs: false, // works even when user is inside an input/form
