@@ -2,6 +2,10 @@
 
 Basic Utility Functionalities from SkylineBiz
 
+### Changelog
+
+See [release.md](release.md) for release notes.
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
