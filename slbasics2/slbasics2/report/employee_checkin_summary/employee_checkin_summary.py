@@ -3,7 +3,9 @@
 
 import frappe
 from frappe import _
-from frappe.utils import get_datetime
+from frappe.utils import format_time, get_datetime
+
+TIME_FORMAT = "hh:mm a"
 
 
 def execute(filters=None):
@@ -92,7 +94,7 @@ def get_data(filters):
 		employee_detail = f"{employee_name} - {device_id}" if device_id else employee_name
 
 		punches = sorted(punches)
-		punch_times = [punch.strftime("%H:%M") for punch in punches]
+		punch_times = [format_time(punch, TIME_FORMAT) for punch in punches]
 
 		data.append(
 			{
