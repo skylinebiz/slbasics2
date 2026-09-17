@@ -16,6 +16,4 @@ def validate_aadhar_number(doc, method=None):
 	if not AADHAR_NUMBER_PATTERN.match(digits_only):
 		frappe.throw(_("Aadhar Number must be exactly 12 digits"))
 
-	doc.custom_aadhar_number = " ".join(
-		digits_only[i : i + 4] for i in range(0, len(digits_only), 4)
-	)
+	doc.custom_aadhar_number = " ".join(digits_only[i : i + 4] for i in range(0, len(digits_only), 4))

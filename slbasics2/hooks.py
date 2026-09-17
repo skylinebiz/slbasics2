@@ -59,12 +59,10 @@ doctype_js = {"Employee": "public/js/employee.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
 fixtures = [
-    {
-        "dt": "Custom Field",
-        "filters": [
-            ["module", "in", ["SLBasics2"]]
-        ],
-    }
+	{
+		"dt": "Custom Field",
+		"filters": [["module", "in", ["SLBasics2"]]],
+	}
 ]
 
 # Svg Icons
