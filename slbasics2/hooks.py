@@ -17,6 +17,9 @@ app_include_js = [
 
 # include js in doctype list views
 doctype_list_js = {"Item": "public/js/item_list.js"}
+
+# include js in doctype views
+doctype_js = {"Employee": "public/js/employee.js"}
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
@@ -54,6 +57,15 @@ doctype_list_js = {"Item": "public/js/item_list.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["module", "in", ["SLBasics2"]]
+        ],
+    }
+]
 
 # Svg Icons
 # ------------------
@@ -152,6 +164,12 @@ doctype_list_js = {"Item": "public/js/item_list.js"}
 # 		"on_trash": "method"
 # 	}
 # }
+
+doc_events = {
+	"Employee": {
+		"validate": "slbasics2.utils.validate_aadhar_number",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
