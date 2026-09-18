@@ -4,7 +4,7 @@ Basic Utility Functionalities from SkylineBiz
 
 ### Changelog
 
-See [release.md](release.md) for release notes.
+See [changelog.md](changelog.md) for release notes.
 
 ### Installation
 
