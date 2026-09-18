@@ -1,8 +1,18 @@
-# Release Notes
+# Changelog
 
 All notable changes to SLBasics2 are documented in this file.
 
 Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible fixes.
+
+## [1.3.0] - 2026-09-18
+
+### Fixed
+
+- **Employee Checkin Summary** report: sorting by the In Time / Last Punch columns was alphabetical instead of chronological once times were shown as text (e.g. `01:00 PM` sorted before `09:00 AM`).
+
+### Changed
+
+- **Employee Checkin Summary** report: In Time and Last Punch now show 24-hour time (`HH:MM:SS`), keeping them correctly sortable. Punch Records continues to show 12-hour AM/PM, since it's a comma-separated list rather than a single sortable value.
 
 ## [1.2.0] - 2026-09-17
 
