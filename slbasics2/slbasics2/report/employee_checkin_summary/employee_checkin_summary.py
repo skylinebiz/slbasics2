@@ -47,7 +47,7 @@ def get_columns():
 			"label": _("Last Punch"),
 			"fieldname": "last_punch",
 			"fieldtype": "Data",
-			"width": 100,
+			"width": 120,
 		},
 		{
 			"label": _("Punch Records"),
@@ -94,15 +94,17 @@ def get_data(filters):
 		employee_detail = f"{employee_name} - {device_id}" if device_id else employee_name
 
 		punches = sorted(punches)
-		punch_times = [format_time(punch, TIME_FORMAT) for punch in punches]
+		# In Time/Last Punch stay 24-hour HH:mm:ss (also keeps column sort
+		# chronological); Punch Records is shown in 12-hour AM/PM instead.
+		punch_records = ", ".join(format_time(punch, TIME_FORMAT) for punch in punches)
 
 		data.append(
 			{
 				"employee_detail": employee_detail,
 				"designation": emp.get("designation"),
-				"in_time": punch_times[0],
-				"last_punch": punch_times[-1],
-				"punch_records": ", ".join(punch_times),
+				"in_time": punches[0].strftime("%H:%M"),
+				"last_punch": punches[-1].strftime("%H:%M"),
+				"punch_records": punch_records,
 			}
 		)
 
