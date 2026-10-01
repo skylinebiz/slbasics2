@@ -166,7 +166,8 @@ fixtures = [
 doc_events = {
 	"Employee": {
 		"validate": "slbasics2.utils.validate_aadhar_number",
-	}
+	},
+	"User": {"before_insert": "slbasics2.override.user.set_simultaneous_sessions"},
 }
 
 # Scheduled Tasks
