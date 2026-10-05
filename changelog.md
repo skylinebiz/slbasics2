@@ -4,6 +4,13 @@ All notable changes to SLBasics2 are documented in this file.
 
 Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible fixes.
 
+## [1.4.0] - 2026-10-01
+
+### Added
+
+- **User** records are now restricted to a single simultaneous session: **Simultaneous Sessions** is set to `1` every time a User is created or updated, so logging in on a second device ends the earlier session. Existing users are switched to a single session the next time their record is saved.
+- The **Simultaneous Sessions** field on User is now read-only, so it can no longer be edited from the form.
+
 ## [1.3.0] - 2026-09-18
 
 ### Fixed
