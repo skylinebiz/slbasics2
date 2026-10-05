@@ -8,7 +8,8 @@ Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breakin
 
 ### Added
 
-- New **User** records are now restricted to a single simultaneous session: **Simultaneous Sessions** is set to `1` when a User is created, so logging in on a second device ends the earlier session. Existing users are not affected.
+- **User** records are now restricted to a single simultaneous session: **Simultaneous Sessions** is set to `1` every time a User is created or updated, so logging in on a second device ends the earlier session. Existing users are switched to a single session the next time their record is saved.
+- The **Simultaneous Sessions** field on User is now read-only, so it can no longer be edited from the form.
 
 ## [1.3.0] - 2026-09-18
 
