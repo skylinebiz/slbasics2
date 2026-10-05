@@ -1,0 +1,18 @@
+[
+ {
+  "default_value": null,
+  "doc_type": "User",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "simultaneous_sessions",
+  "is_system_generated": 0,
+  "modified": "2026-10-05 12:00:00.000000",
+  "module": "SLBasics2",
+  "name": "User-simultaneous_sessions-read_only",
+  "property": "read_only",
+  "property_type": "Check",
+  "row_name": null,
+  "value": "1"
+ }
+]
