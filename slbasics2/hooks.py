@@ -13,7 +13,7 @@ app_include_js = [
 	"/assets/slbasics2/js/barcode_scanner_override.js",
 ]
 
-# required_apps = []
+required_apps = ["erpnext", "hrms"]
 
 # include js in doctype list views
 doctype_list_js = {"Item": "public/js/item_list.js"}
@@ -283,3 +283,7 @@ doc_events = {
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+
+# HRMS PWA: require precise location (5 m) for check-in / check-out
+# ------------------------------------------------------------------
+after_request = ["slbasics2.override.hrms_pwa.inject_precise_checkin_script"]
