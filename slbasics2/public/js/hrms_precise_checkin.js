@@ -1,5 +1,5 @@
 // Injected into the HRMS PWA (see slbasics2.override.hrms_pwa).
-// Check-in / check-out is allowed only after a GPS fix accurate to REQUIRED_ACCURACY_METERS is fetched.
+// Check-in / check-out is allowed only after a GPS fix accurate to the HR Settings limit (default 5 m) is fetched.
 // Nothing is stored: the fix is only held in memory while the check-in modal is open.
 ;(() => {
 	const REQUIRED_ACCURACY_METERS = 20

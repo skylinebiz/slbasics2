@@ -1,3 +1,4 @@
+import json
 import os
 
 import frappe
@@ -19,6 +20,15 @@ def inject_precise_checkin_script(response, request):
 	if "hrms_precise_checkin.js" in html or "</body>" not in html:
 		return
 
+	settings = frappe.get_cached_doc("HR Settings")
+	config = {
+		"enabled": bool(settings.get("custom_require_precise_checkin")),
+		"accuracy": float(settings.get("custom_checkin_required_accuracy") or 5),
+	}
+	if not config["enabled"]:
+		return
+
 	script_path = frappe.get_app_path("slbasics2", "public", "js", "hrms_precise_checkin.js")
 	script = PRECISE_CHECKIN_SCRIPT.format(version=int(os.path.getmtime(script_path)))
-	response.set_data(html.replace("</body>", f"{script}</body>", 1))
+	config_tag = f"<script>window.slbasics2_checkin = {json.dumps(config)}</script>"
+	response.set_data(html.replace("</body>", f"{config_tag}{script}</body>", 1))
