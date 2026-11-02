@@ -4,6 +4,21 @@ All notable changes to SLBasics2 are documented in this file.
 
 Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible fixes.
 
+## [3.0.0] - 2026-11-02
+
+### Removed
+
+- **Breaking:** the **HRMS mobile app (PWA) precise-location check-in** added in 2.0.0 has been removed. Mobile check-ins are no longer blocked for a coarse GPS fix, the accuracy prompt no longer appears in the check-in modal, and the `/hrms` page script is no longer injected.
+- The **Require Precise Location for Mobile Check-in** and **Required Location Accuracy (meters)** fields are no longer shipped on **HR Settings**. Sites that installed 2.0.0 keep the two custom fields until they are deleted manually; they have no effect any more.
+
+### Added
+
+- **SLBasics2** now appears on the apps screen and in the sidebar's **Apps** menu, with its own icon. It opens the **Employee Checkin Summary** report.
+
+### Fixed
+
+- **Item list view:** the **UOM Calculator** button replaced the list view buttons added by other apps. It is now added alongside them, keeping the list view `onload` other apps have already set.
+
 ## [2.0.0] - 2026-10-13
 
 ### Added
