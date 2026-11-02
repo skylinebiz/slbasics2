@@ -4,6 +4,17 @@ app_publisher = "Harshit Jain"
 app_description = "Basic Utility Functionalities from SkylineBiz"
 app_email = "harshit@skylinebiz.in"
 app_license = "mit"
+app_home = "/desk/query-report/Employee Checkin Summary"
+app_logo_url = "/assets/slbasics2/images/slbasics2-logo.svg"
+
+add_to_apps_screen = [
+	{
+		"name": app_name,
+		"logo": app_logo_url,
+		"title": app_title,
+		"route": app_home,
+	}
+]
 
 # Apps
 # ------------------
