@@ -283,7 +283,3 @@ doc_events = {
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-
-# HRMS PWA: require precise location (5 m) for check-in / check-out
-# ------------------------------------------------------------------
-after_request = ["slbasics2.override.hrms_pwa.inject_precise_checkin_script"]
