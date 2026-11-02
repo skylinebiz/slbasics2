@@ -4,6 +4,35 @@ All notable changes to SLBasics2 are documented in this file.
 
 Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible fixes.
 
+## [3.0.0] - 2026-11-02
+
+### Removed
+
+- **Breaking:** the **HRMS mobile app (PWA) precise-location check-in** added in 2.0.0 has been removed. Mobile check-ins are no longer blocked for a coarse GPS fix, the accuracy prompt no longer appears in the check-in modal, and the `/hrms` page script is no longer injected.
+- The **Require Precise Location for Mobile Check-in** and **Required Location Accuracy (meters)** fields are no longer shipped on **HR Settings**. Sites that installed 2.0.0 keep the two custom fields until they are deleted manually; they have no effect any more.
+
+### Added
+
+- **SLBasics2** now appears on the apps screen and in the sidebar's **Apps** menu, with its own icon. It opens the **Employee Checkin Summary** report.
+
+### Fixed
+
+- **Item list view:** the **UOM Calculator** button replaced the list view buttons added by other apps. It is now added alongside them, keeping the list view `onload` other apps have already set.
+
+## [2.0.0] - 2026-10-13
+
+### Added
+
+- **HRMS mobile app (PWA) precise-location check-in.** When enabled, employees can check in or out only after a GPS fix within the configured accuracy (default 5 m) is fetched. The check-in modal shows the live accuracy and, until the fix is precise enough, an alert asking the employee to move outside. The **Confirm** button stays disabled, and any Employee Checkin created without a precise fix is blocked. The check is re-evaluated on the latest reading, so moving out of range again blocks the check-in, and nothing about the fix is stored.
+- New fields on **HR Settings**, next to *Allow Geolocation Tracking*:
+  - **Require Precise Location for Mobile Check-in**: turns the rule on or off for all employees.
+  - **Required Location Accuracy (meters)**: the accuracy limit, defaults to `5`.
+- The behaviour is added from `slbasics2` (an `after_request` hook injects the script into the `/hrms` page); no changes were made to the `hrms` app.
+
+### Changed
+
+- **Behaviour change:** with **Require Precise Location for Mobile Check-in** enabled, mobile check-ins that previously succeeded with a coarse location are now rejected until a precise fix is available. The setting is off by default, so existing behaviour is unchanged until it is enabled.
+
 ## [1.4.0] - 2026-10-01
 
 ### Added
