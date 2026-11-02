@@ -24,7 +24,7 @@ app_include_js = [
 	"/assets/slbasics2/js/barcode_scanner_override.js",
 ]
 
-required_apps = ["erpnext", "hrms"]
+required_apps = ["erpnext"]
 
 # include js in doctype list views
 doctype_list_js = {"Item": "public/js/item_list.js"}
