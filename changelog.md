@@ -4,6 +4,12 @@ All notable changes to SLBasics2 are documented in this file.
 
 Versioning follows [Semantic Versioning](https://semver.org/): MAJOR for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible fixes.
 
+## [3.0.1] - 2026-11-19
+
+### Changed
+
+- **App icon** — replaced the grey "S" text tile with a drawn icon: a white toolbox on a cyan rounded square (`slbasics2-logo.svg`). It has no text, so it stays readable at sidebar size. Hard-refresh browsers to see it.
+
 ## [3.0.0] - 2026-11-02
 
 ### Removed
